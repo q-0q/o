@@ -1,7 +1,0 @@
-res://Autoload/SceneManager.gd
-res://Scene/Level/Menu/main_menu.tscn
-res://Script/UI/main_menu_start_button.gd
-res://Scene/Menu/main_menu.tscn
-res://Scene/Menu/level_select.tscn
-res://Script/UI/scene_load_button.gd
-res://Scene/Level/level_1.tscn
