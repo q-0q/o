@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://cra33cty8i2k"]
+
+[ext_resource type="Script" uid="uid://d1tm4kp3cius6" path="res://Script/UI/scene_load_button.gd" id="1_jb67d"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -224.0
+offset_right = 61.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "level select"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -81.0
+offset_right = 22.5
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+script = ExtResource("1_jb67d")
+scene_path = "res://Scene/Menu/main_menu.tscn"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 80.0
+offset_right = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Level1" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(60.365, 0)
+layout_mode = 2
+text = "1
+"
+script = ExtResource("1_jb67d")
+scene_path = "res://Scene/Level/level_1.tscn"
+
+[node name="Level2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "WIP
+"
+script = ExtResource("1_jb67d")
+
+[node name="Level3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(60.365, 0)
+layout_mode = 2
+text = "WIP
+"
+script = ExtResource("1_jb67d")
+
+[node name="Level4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(60.365, 0)
+layout_mode = 2
+text = "WIP
+"
+script = ExtResource("1_jb67d")
+
+[node name="Level 5" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(60.365, 0)
+layout_mode = 2
+text = "WIP
+"
+script = ExtResource("1_jb67d")
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level1" to="GridContainer/Level1" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level2" to="GridContainer/Level2" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level3" to="GridContainer/Level3" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level4" to="GridContainer/Level4" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level 5" to="GridContainer/Level 5" method="_on_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://coyafbkkpb7sn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ldg6u"]
+
+[sub_resource type="Environment" id="Environment_ldg6u"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ldg6u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02976, 2.26647, -0.00169826)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.826973, 0.562242, 0, -0.562242, 0.826973, 0, 2.26647, 2.8746)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ldg6u")

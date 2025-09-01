@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="o"
+run/main_scene="uid://b8cdks6jmt52g"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://Autoload/SceneManager.gd"
+
+[dotnet]
+
+project/assembly_name="o"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.162065, 0.162066, 0.162065, 1)
