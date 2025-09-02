@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://l3ejq8pxgeua"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wbeew"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkhd4"]
+albedo_color = Color(0.65098, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbeew"]
+
+[node name="LevelGridMapTiles" type="Node3D"]
+
+[node name="HallTile" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wbeew")
+skeleton = NodePath("../RoomTile")
+surface_material_override/0 = SubResource("StandardMaterial3D_tkhd4")
+
+[node name="RoomTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_wbeew")
+surface_material_override/0 = SubResource("StandardMaterial3D_wbeew")

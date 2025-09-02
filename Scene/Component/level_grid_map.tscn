@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsisb8mjaufvq"]
+
+[ext_resource type="MeshLibrary" uid="uid://djk0vtug1jywt" path="res://3D/MeshLibrary/level_grid_map_tiles_mesh_library.tres" id="1_1eve1"]
+
+[node name="LevelGridMap" type="GridMap"]
+mesh_library = ExtResource("1_1eve1")
+cell_size = Vector3(1, 1, 1)
