@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://coyafbkkpb7sn"]
+[gd_scene load_steps=7 format=3 uid="uid://coyafbkkpb7sn"]
 
 [ext_resource type="PackedScene" uid="uid://dsisb8mjaufvq" path="res://Scene/Component/level_grid_map.tscn" id="1_uadcu"]
+[ext_resource type="Script" uid="uid://bjs7ad5swe8ub" path="res://Scene/Component/Player/player.gd" id="2_xdehu"]
+[ext_resource type="Script" uid="uid://b8tvtlrfg6pk5" path="res://Script/Player/game_cursor.gd" id="3_ico47"]
+[ext_resource type="Script" uid="uid://btt8lf2dp2g7m" path="res://Scene/Component/Player/camera_holder.gd" id="3_puuwu"]
 
 [sub_resource type="Environment" id="Environment_ldg6u"]
 
-[node name="Level1" type="Node3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_uadcu"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, 0.641377, -0.297717, 0, 0.421036, 0.907044, 0.707107, -0.641377, 0.297717, -3.10831, 10.4701, 4.12156)
+[node name="Level1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ldg6u")
@@ -19,3 +21,20 @@ data = {
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.81815, 0.575005, 0, -0.575005, 0.81815, 0, 0, 0)
+
+[node name="Player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53594, 0)
+mesh = SubResource("SphereMesh_uadcu")
+script = ExtResource("2_xdehu")
+
+[node name="CameraHolder" type="Node3D" parent="Player"]
+transform = Transform3D(0.59, 0, 0, 0, 0.32907, 0.489707, 0, -0.489707, 0.32907, 0, 0, 0)
+script = ExtResource("3_puuwu")
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.322)
+
+[node name="GameCursor" type="Node" parent="Player"]
+script = ExtResource("3_ico47")
+
+[connection signal="computed_camera_position" from="Player/GameCursor" to="Player" method="_on_game_cursor_computed_camera_position"]
