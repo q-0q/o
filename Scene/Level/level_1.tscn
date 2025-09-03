@@ -28,11 +28,11 @@ mesh = SubResource("SphereMesh_uadcu")
 script = ExtResource("2_xdehu")
 
 [node name="CameraHolder" type="Node3D" parent="Player"]
-transform = Transform3D(0.59, 0, 0, 0, 0.32907, 0.489707, 0, -0.489707, 0.32907, 0, 0, 0)
+transform = Transform3D(0.59, 0, 0, 0, 0.295, 0.510955, 0, -0.510955, 0.295, 0, 0, 0)
 script = ExtResource("3_puuwu")
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 15.322)
 
 [node name="GameCursor" type="Node" parent="Player"]
 script = ExtResource("3_ico47")
