@@ -39,7 +39,7 @@ script = ExtResource("3_puuwu")
 [node name="LineToCameraHolder" type="Node3D" parent="Player/CameraHolder"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CameraHolder/LineToCameraHolder"]
-transform = Transform3D(0.338983, 0, 0, 0, -2.96348e-07, -0.338983, 0, 6.77966, -1.48174e-08, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, -2.96363e-07, -0.2, 0, 6.78, -8.74228e-09, 0, 0, 0)
 mesh = SubResource("CylinderMesh_puuwu")
 skeleton = NodePath("../../root/@EditorNode@21310/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Level1/Player/GameCursor")
 

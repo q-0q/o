@@ -10,5 +10,6 @@ func set_player_pos(player_pos):
 	player_position = player_pos
 
 func _process(delta):
-	position = lerp(position, canonical_camera_position, delta * 20)
+	# position = lerp(position, canonical_camera_position, delta * 15)
+	position = canonical_camera_position
 	$LineToCameraHolder.look_at(player_position, Vector3.LEFT)
