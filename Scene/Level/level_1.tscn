@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://coyafbkkpb7sn"]
+[gd_scene load_steps=11 format=3 uid="uid://coyafbkkpb7sn"]
 
 [ext_resource type="PackedScene" uid="uid://dsisb8mjaufvq" path="res://Scene/Component/level_grid_map.tscn" id="1_uadcu"]
 [ext_resource type="Script" uid="uid://bjs7ad5swe8ub" path="res://Scene/Component/Player/player.gd" id="2_xdehu"]
 [ext_resource type="Script" uid="uid://b8tvtlrfg6pk5" path="res://Script/Player/game_cursor.gd" id="3_ico47"]
 [ext_resource type="Script" uid="uid://btt8lf2dp2g7m" path="res://Scene/Component/Player/camera_holder.gd" id="3_puuwu"]
+[ext_resource type="Script" uid="uid://ie42ai7ypq3v" path="res://Script/Player/player_fsm.gd" id="5_ksqor"]
+[ext_resource type="Script" uid="uid://h1nvodce7y6" path="res://Script/FSM/state.gd" id="6_ksqor"]
 
 [sub_resource type="Environment" id="Environment_ldg6u"]
 
@@ -73,5 +75,26 @@ transform = Transform3D(0.5, 0, 0, 0, -9.92248e-08, -0.5, 0, 2.27, -2.18557e-08,
 visible = false
 mesh = SubResource("CylinderMesh_puuwu")
 skeleton = NodePath("../../root/@EditorNode@21310/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Level1/Player/GameCursor")
+
+[node name="FSM" type="Node3D" parent="Player"]
+script = ExtResource("5_ksqor")
+
+[node name="States" type="Node3D" parent="Player/FSM"]
+
+[node name="Idle" type="Node3D" parent="Player/FSM/States"]
+script = ExtResource("6_ksqor")
+metadata/_custom_type_script = "uid://h1nvodce7y6"
+
+[node name="Walk" type="Node3D" parent="Player/FSM/States"]
+script = ExtResource("6_ksqor")
+metadata/_custom_type_script = "uid://h1nvodce7y6"
+
+[node name="Run" type="Node3D" parent="Player/FSM/States"]
+script = ExtResource("6_ksqor")
+metadata/_custom_type_script = "uid://h1nvodce7y6"
+
+[node name="Tags" type="Node3D" parent="Player/FSM"]
+
+[node name="Grounded" type="Node3D" parent="Player/FSM/Tags"]
 
 [connection signal="computed_camera_position" from="Player/GameCursor" to="Player" method="_on_game_cursor_computed_camera_position"]
